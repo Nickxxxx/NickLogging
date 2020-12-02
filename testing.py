@@ -1,10 +1,38 @@
 
+from SVLog import NickModul
 import logging
 from logging import log
+import logging.config
 
-logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
-logging.warning('This is the second log!')
+class Car:
+    def Test(self):
+        print("First")
+    
+    
+    class Audi:
+        def remove():
+            print("Yes")
 
+Car = Car()
+Car.Test()
+Car.Audi.remove()
+
+
+logging.config.fileConfig(fname='file.conf', disable_existing_loggers=False)
+
+#NickModul.config.fileConfig
+
+logging.config.fileConfig('logging.conf')
+
+# create logger
+logger = logging.getLogger('simpleExample')
+
+# 'application' code
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warn message')
+logger.error('error message')
+logger.critical('critical message')
 
 
 
